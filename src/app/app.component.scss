@@ -1,0 +1,13 @@
+
+
+
+.btn-lg-nav {
+    font-size: 0.9rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 0.7rem 1.4rem;
+    &.btn-primary {
+        background-color: #002b42;
+    }
+}

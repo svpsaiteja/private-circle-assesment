@@ -1,0 +1,40 @@
+
+
+<div class="d-flex flex-column vh-100">
+
+  <div class="d-flex align-items-center bg-light p-4">
+    <button type="button" class="btn btn-primary btn-lg btn-lg-nav mr-3"><i class="fa fa-list mr-2"></i>Saved list</button>
+    <button type="button" class="btn btn-lg btn-lg-nav mr-3"><i class="fa fa-filter mr-2"></i>Saved filters</button>
+    <button type="button" class="btn btn-lg btn-lg-nav mr-auto"><i class="fa fa-history mr-2"></i>Search history</button>
+
+    <input class="form-control w-25" [formControl]="searchFormControl" type="search" placeholder="Search" aria-label="Search">
+  </div>
+
+  <div class="flex-fill overflow-hidden">
+
+      <div class="h-100 row no-gutters">
+
+        <div class="col-9 h-100 overflow-auto">
+          <app-list-table 
+            [list]="filteredList$ | async" 
+            [selectedListItem]="selectedItem$ | async" 
+            [loading]="loading$ | async"
+            (selectListItem)="selectListItem($event)"></app-list-table>
+        </div>
+  
+        <div class="col-3 p-4 h-100 overflow-auto">
+          <div class="p-3 bg-light rounded mb-3">
+            <small class="mr-2">No description yet</small> <a href="#" class="font-weight-bold"><small>+ Add Description</small></a>
+          </div>
+          <ul class="list-unstyled">
+              <li *ngFor="let entity of (selectedItem$ | async)?.entities" class="mb-2"><a class="text-primary">{{entity}}</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+

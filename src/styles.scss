@@ -1,0 +1,25 @@
+
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import './assets/bootstrap.scss';
+
+
+
+
+
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: $gray-300;
+}
+
+::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: $gray-300;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: $gray-500;
+}
